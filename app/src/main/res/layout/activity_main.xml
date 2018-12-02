@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:id="@+id/ll"
+    tools:context=".ui.activity.MainActivity">
+
+    <Button
+        android:id="@+id/btn_headerAndFooter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HeaderAndFooter(只可进一次，adapter没有移除问题)"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_sku"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sku"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_steam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="steam"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_shoppingGoods"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="shoppingGoods"
+        android:textAllCaps="false"/>
+
+    <com.gwb.superrecycleview.ui.wedgit.AddOrReduceView
+        android:id="@+id/addOrReduceView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"/>
+
+    <ImageView
+        android:id="@+id/iv"
+
+        android:background="#15b645"
+        android:layout_marginTop="180dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"/>
+</RelativeLayout>
