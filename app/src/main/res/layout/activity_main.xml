@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
+    android:id="@+id/ll"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,7 +8,6 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:id="@+id/ll"
     tools:context=".ui.activity.MainActivity">
 
     <Button
@@ -21,6 +21,7 @@
         android:id="@+id/btn_sku"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_headerAndFooter"
         android:text="sku"
         android:textAllCaps="false"/>
 
@@ -28,6 +29,7 @@
         android:id="@+id/btn_steam"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_sku"
         android:text="steam"
         android:textAllCaps="false"/>
 
@@ -35,22 +37,32 @@
         android:id="@+id/btn_shoppingGoods"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_steam"
         android:text="shoppingGoods"
         android:textAllCaps="false"/>
 
     <com.yhbuao.superrecycleview.ui.wedgit.AddOrReduceView
         android:id="@+id/addOrReduceView"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"/>
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="60dp"
+        android:layout_marginRight="20dp"/>
 
     <ImageView
         android:id="@+id/iv"
-
-        android:background="#15b645"
-        android:layout_marginTop="180dp"
         android:layout_width="30dp"
-        android:layout_height="30dp"/>
+        android:layout_height="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="200dp"
+        android:background="#15b645"/>
+
+    <TextView
+        android:id="@+id/tv_allCount"
+        android:layout_marginBottom="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        tools:text="dhsjchsd"/>
 </RelativeLayout>

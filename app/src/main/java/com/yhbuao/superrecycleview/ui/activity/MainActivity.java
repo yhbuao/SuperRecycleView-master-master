@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.yhbuao.superrecycleview.R;
 import com.yhbuao.superrecycleview.ui.BaseActivity;
@@ -37,19 +38,30 @@ public class MainActivity extends AppCompatActivity {
         int color = R.color.colorAccent;
         final RelativeLayout linearLayout = findViewById(R.id.ll);
         final ImageView iv = findViewById(R.id.iv);
+        final TextView tvAllCount = findViewById(R.id.tv_allCount);
 
         final AddOrReduceView addOrReduceView = ((AddOrReduceView) findViewById(R.id.addOrReduceView));
         addOrReduceView.setReduceListener(new AddOrReduceView.ReduceListener() {
             @Override
             public void onReduceClick() {
-
+                // 商品的数量是否显示
+                int allCount = addOrReduceView.getAllCount();
+                if (allCount <= 0) {
+                    tvAllCount.setVisibility(View.GONE);
+                } else {
+                    tvAllCount.setText(String.valueOf(allCount));
+                    tvAllCount.setVisibility(View.VISIBLE);
+                }
             }
         });
 
         addOrReduceView.setAddListener(new AddOrReduceView.AddListener() {
             @Override
             public void onAddClick() {
-                addOrReduceView.addGoods2CartAnim(MainActivity.this, linearLayout, iv);
+                if (addOrReduceView.getAllCount() > 0) {
+                    tvAllCount.setVisibility(View.VISIBLE);
+                }
+                addOrReduceView.addGoods2CartAnim(MainActivity.this, linearLayout, iv, tvAllCount);
             }
         });
     }

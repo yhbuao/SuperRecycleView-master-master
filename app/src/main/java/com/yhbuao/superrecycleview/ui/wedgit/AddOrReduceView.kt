@@ -132,23 +132,26 @@ class AddOrReduceView : FrameLayout {
 
     /**
      * 贝塞尔曲线动画
+     * @param context
+     * @param parentView 顶级父类的view 用来装载曲线动图
+     * @param endCartAnimView
      */
-    fun addGoods2CartAnim(context: Context, mCoordinatorLayout: ViewGroup, mIvShoppingCart: ImageView) {
+    fun addGoods2CartAnim(context: Context, parentView: ViewGroup, endCartAnimView: View,textView:TextView) {
         val goods = ImageView(context)
         goods.setImageResource(R.mipmap.icon_goods_add)
         val size = dp2px(context, 24f)
         val lp = ViewGroup.LayoutParams(size, size)
         goods.layoutParams = lp
-        mCoordinatorLayout.addView(goods)
+        parentView.addView(goods)
         // 控制点的位置
         val recyclerLocation = IntArray(2)
-        mCoordinatorLayout.getLocationInWindow(recyclerLocation)
+        parentView.getLocationInWindow(recyclerLocation)
         // 加入点的位置起始点
         val startLocation = IntArray(2)
         ivAdd?.getLocationInWindow(startLocation)
         // 购物车的位置终点
         val endLocation = IntArray(2)
-        mIvShoppingCart.getLocationInWindow(endLocation)
+        endCartAnimView.getLocationInWindow(endLocation)
         // TODO: 2018/5/21 0021 考虑到状态栏的问题，不然会往下偏移状态栏的高度
         val startX = startLocation[0] - recyclerLocation[0]
         val startY = startLocation[1] - recyclerLocation[1]
@@ -189,9 +192,9 @@ class AddOrReduceView : FrameLayout {
         valueAnimator.addListener(object : AnimatorListenerAdapter() {
             override fun onAnimationEnd(animation: Animator) {
                 // 移除图片
-                mCoordinatorLayout.removeView(goods)
+                parentView.removeView(goods)
                 // 购物车数量增加
-//                mTvShoppingCartCount.setText(allCount.toString())
+                textView.text = allCount.toString()
             }
         })
     }
@@ -199,7 +202,7 @@ class AddOrReduceView : FrameLayout {
     /**
      * dp2px 转换
      */
-    fun dp2px(context: Context, dpValue: Float): Int {
+    private fun dp2px(context: Context, dpValue: Float): Int {
         val scale = context.resources.displayMetrics.density
         return (dpValue * scale + 0.5f).toInt()
     }

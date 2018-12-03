@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SuperRecycleView</string>
+    <string name="app_name">电商</string>
     <string name="jsonData">{
         "attributes": [
         {
