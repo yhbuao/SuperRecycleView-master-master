@@ -38,7 +38,7 @@
         android:text="shoppingGoods"
         android:textAllCaps="false"/>
 
-    <com.gwb.superrecycleview.ui.wedgit.AddOrReduceView
+    <com.yhbuao.superrecycleview.ui.wedgit.AddOrReduceView
         android:id="@+id/addOrReduceView"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"

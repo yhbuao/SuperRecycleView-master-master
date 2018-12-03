@@ -4,7 +4,7 @@ apply plugin: 'kotlin-android'
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "com.gwb.superrecycleview"
+        applicationId "com.yhbuao"
         minSdkVersion 19
         targetSdkVersion 26
         versionCode 1
